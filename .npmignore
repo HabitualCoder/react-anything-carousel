@@ -1,0 +1,11 @@
+demo/
+src/__tests__/
+scripts/
+coverage/
+vitest.config.ts
+vite.config.ts
+tsconfig.json
+tsconfig.build.json
+.eslintrc.cjs
+.prettierrc
+*.log

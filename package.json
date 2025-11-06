@@ -1,0 +1,85 @@
+{
+  "name": "react-anything-carousel",
+  "version": "0.1.0",
+  "description": "A flexible React carousel component that can render anything.",
+  "author": "HabitualCoder",
+  "license": "MIT",
+  "homepage": "https://github.com/HabitualCoder/react-anything-carousel#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HabitualCoder/react-anything-carousel.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HabitualCoder/react-anything-carousel/issues"
+  },
+  "keywords": [
+    "react",
+    "carousel",
+    "component",
+    "slider",
+    "typescript"
+  ],
+  "type": "module",
+  "sideEffects": [
+    "dist/style.css",
+    "*.css"
+  ],
+  "files": [
+    "dist",
+    "src"
+  ],
+  "main": "./dist/react-anything-carousel.cjs",
+  "module": "./dist/react-anything-carousel.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/react-anything-carousel.js",
+      "require": "./dist/react-anything-carousel.cjs"
+    },
+    "./styles": "./dist/style.css"
+  },
+  "scripts": {
+    "dev": "vite --config vite.config.ts",
+  "build": "vite build",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
+    "lint": "eslint . --ext .ts,.tsx",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,md}\"",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "coverage": "vitest run --coverage",
+    "clean": "rimraf dist",
+    "release": "node ./scripts/release.mjs",
+    "demo:install": "npm install --prefix demo",
+    "demo:dev": "npm run dev --prefix demo",
+    "demo:build": "npm run build --prefix demo",
+    "demo:preview": "npm run preview --prefix demo"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.2.0",
+    "@testing-library/react": "^15.0.0",
+    "@testing-library/user-event": "^14.5.0",
+    "@types/node": "^20.11.0",
+    "@types/react": "^18.2.45",
+    "@types/react-dom": "^18.2.17",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "@vitejs/plugin-react": "^4.2.0",
+    "@vitest/coverage-c8": "^0.34.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-react": "^7.33.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^3.1.0",
+    "rimraf": "^5.0.0",
+    "typescript": "^5.3.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.7.0",
+    "vitest": "^1.2.0"
+  }
+}
