@@ -1,0 +1,103 @@
+:root {
+  /* Consumers can override these custom properties if needed. */
+  --rac-transition-duration: 450ms;
+  --rac-transition-timing: ease;
+}
+
+.rac-carousel {
+  position: relative;
+  display: block;
+  width: 100%;
+  color: inherit;
+}
+
+.rac-carousel__viewport {
+  overflow: hidden;
+}
+
+.rac-carousel__track {
+  display: flex;
+  gap: var(--rac-gap, 1rem);
+  transform: translateX(0);
+  transition: transform var(--rac-transition-duration) var(--rac-transition-timing);
+  will-change: transform;
+  width: 100%;
+}
+
+.rac-carousel__track:focus {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.rac-carousel__item {
+  flex: 0 0 calc((100% - (var(--rac-gap, 0px) * (var(--rac-visible, 1) - 1))) / var(--rac-visible, 1));
+  min-width: 0;
+  position: relative;
+}
+
+.rac-carousel__controls {
+  position: absolute;
+  inset-inline: 0;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.rac-carousel__controls-button {
+  pointer-events: auto;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  transition: background 150ms ease;
+}
+
+.rac-carousel__controls-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.rac-carousel__controls-button:not(:disabled):hover,
+.rac-carousel__controls-button:not(:disabled):focus-visible {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.rac-carousel__indicators {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.rac-carousel__indicators-dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+  border: none;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0;
+  cursor: pointer;
+}
+
+.rac-carousel__indicators-dot[aria-selected='true'] {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
